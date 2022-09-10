@@ -1,3 +1,4 @@
+import 'package:e_com_app/features/auth/screens/auth_screen.dart';
 import 'package:e_com_app/router.dart';
 import 'package:flutter/material.dart';
 
@@ -34,10 +35,14 @@ class MyApp extends StatelessWidget {
             const Center(
               child: Text('Flutter Demo Home Page'),
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Click'),
-            ),
+            Builder(builder: (context) {
+              return ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, AuthScreen.routeName);
+                },
+                child: Text('Click'),
+              );
+            }),
           ],
         ),
       ),
